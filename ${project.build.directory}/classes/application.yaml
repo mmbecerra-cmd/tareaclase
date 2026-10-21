@@ -1,0 +1,37 @@
+server:
+   port: 8081
+   error:
+     include-message: always
+  #connfiguracion de spring
+spring:
+  application:
+    name: herramientasuda
+  #configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqMigrationSuffixes: .squl
+    baselineOnMigrate: true
+    sqMigrationPrefix: V
+    schemas: public
+ #configuracion de base de datos
+  datasource:
+    url: jdbc:postgresql://localhost:5432/herramientasuda
+    username: postgres
+    password: postgres
+    driver-clss-name: org.postgresql.Driver
+ #configuracion de JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+
+
+
